@@ -1,28 +1,29 @@
-/******* Change Box Model ***************/
+/******* Box Model ***************/
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
 
-/* Mobile first styles */
-    body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/******* Base Styles ***************/
+body {
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 40px;
   background-image: url("/images/site/checkerboard.jpg");
   background-size: cover;
   color: #111;
-  border: aqua 2px solid;
+  border: #003366 2px solid;
   border-radius: 10px;
+  line-height: 1.6;
 }
 
-main{
+main {
   background-color: white;
 }
 
 header {
   padding: 1rem;
-  background: black;
+  background: #003366;
   border-bottom: 1px solid #ccc;
   border-radius: 10px 10px 0 0;
 }
@@ -31,7 +32,6 @@ header h1 {
   margin: 0;
   color: white;
 }
-
 
 nav {
   display: flex;
@@ -102,19 +102,23 @@ nav ul li a,
 
 .upgrades-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 1rem;
+  margin-top: 1rem;
 }
 
-.upgrades-grid a{
-  color: #111;
-}
+
 
 .upgrades-grid div {
-  text-align: center;
-  background: #00bcd4;
+  background-color: #e9f1fb;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 6px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.upgrades-grid div:hover {
+  background-color: #d0e7fa;
 }
 
 .upgrades-grid img {
@@ -123,12 +127,23 @@ nav ul li a,
   margin-bottom: 0.5rem;
 }
 
+.upgrades-grid a {
+  display: block;
+  color: #004080;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.upgrades-grid a:hover {
+  text-decoration: underline;
+}
+
 footer {
   text-align: center;
   padding: 1rem;
   background: #f1f1f1;
   font-size: 0.9rem;
-   border-radius:   0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
 }
 
 /* Media query for larger screens */
@@ -149,7 +164,8 @@ footer {
     justify-content: space-between;
   }
 
-  .reviews, .upgrades {
+  .reviews,
+  .upgrades {
     width: 48%;
   }
 
@@ -163,4 +179,3 @@ footer {
     gap: 2rem;
   }
 }
-
